@@ -29,7 +29,7 @@ class JobScrapMessage(BaseModel):
 
     @model_validator(mode="before")
     def check_failure_reason(cls: Any, values: Any) -> Any:
-        if values["failed"] and values.get("failure_reason") is None:
+        if values["scrap_success"] is False and values.get("failure_reason") is None:
             raise ValueError("failure_reason must be provided if the job failed.")
 
         return values
