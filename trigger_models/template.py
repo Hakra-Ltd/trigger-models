@@ -4,18 +4,18 @@ from typing import Any
 from pydantic import UUID4
 
 from trigger_models.enum import FailureReason, ScrapType
-from trigger_models.model import ScrapJobMessage
+from trigger_models.model import JobScrapMessage
 
 
 def get_success_job_message(
-    event_id: str,
-    job_id: UUID4,
-    scrap_type: ScrapType,
-    started: datetime.datetime,
-    finished: datetime.datetime,
-    scrap_notes: dict[str, Any] | None = None,
-) -> ScrapJobMessage:
-    return ScrapJobMessage(
+        event_id: str,
+        job_id: UUID4,
+        scrap_type: ScrapType,
+        started: datetime.datetime,
+        finished: datetime.datetime,
+        scrap_notes: dict[str, Any] | None = None,
+) -> JobScrapMessage:
+    return JobScrapMessage(
         event_id=event_id,
         job_id=job_id,
         scrap_type=scrap_type,
@@ -27,15 +27,15 @@ def get_success_job_message(
 
 
 def get_error_job_message(
-    event_id: str,
-    job_id: UUID4,
-    scrap_type: ScrapType,
-    started: datetime.datetime,
-    finished: datetime.datetime,
-    scrap_notes: dict[str, Any],
-    failure_reason: FailureReason,
-) -> ScrapJobMessage:
-    return ScrapJobMessage(
+        event_id: str,
+        job_id: UUID4,
+        scrap_type: ScrapType,
+        started: datetime.datetime,
+        finished: datetime.datetime,
+        scrap_notes: dict[str, Any],
+        failure_reason: FailureReason,
+) -> JobScrapMessage:
+    return JobScrapMessage(
         event_id=event_id,
         job_id=job_id,
         scrap_type=scrap_type,
