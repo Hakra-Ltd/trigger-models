@@ -4,6 +4,10 @@ version = "0.1.0"
 description = ""
 authors = ["Jiri Sevcik <jiri.sevcik@primehammer.com>"]
 readme = "README.md"
+packages = [
+    { include = "trigger_models" },
+]
+include = ["CHANGELOG.md", "trigger_models/py.typed"]
 
 [tool.poetry.dependencies]
 python = "^3.12"
