@@ -11,7 +11,6 @@ class JobRunMessage(BaseModel):
     event_id: str
     scrap_type: ScrapType
     run_config: Optional[dict[str, Any]] | None = None
-    reporting: Optional[bool] | None = None
 
 
 class JobScrapMessage(BaseModel):
