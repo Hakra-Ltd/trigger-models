@@ -6,11 +6,12 @@ from pydantic import UUID4, BaseModel, model_validator
 from trigger_models.enum import FailureReason, ScrapType
 
 
-class RunJobInfo(BaseModel):
+class JobRunInfo(BaseModel):
     job_run_id: UUID4
     event_id: str
     scrap_type: ScrapType
     run_config: dict[str, Any] | None
+    reporting: bool | None = None
 
 
 class ScrapJobMessage(BaseModel):
