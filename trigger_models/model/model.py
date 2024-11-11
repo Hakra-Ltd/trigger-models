@@ -23,7 +23,7 @@ class JobScrapMessage(BaseModel):
     process_finished_at: datetime.datetime | None = None
     scrap_success: Optional[bool] = None
     process_success: Optional[bool] = None
-    failure_reason: FailureReason | None = None
+    failure_reason: Optional[FailureReason] | None = None
     scrap_notes: Optional[dict[str, Any]] | None = None
     process_notes: Optional[dict[str, Any]] | None = None
 
