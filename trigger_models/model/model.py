@@ -10,8 +10,8 @@ class JobRunMessage(BaseModel):
     job_run_id: UUID4
     event_id: str
     scrap_type: ScrapType
-    run_config: dict[str, Any] | None
-    reporting: bool | None = None
+    run_config: Optional[dict[str, Any]] | None = None
+    reporting: Optional[bool] | None = None
 
 
 class JobScrapMessage(BaseModel):
