@@ -42,4 +42,4 @@ jobs:
           cache: 'poetry'
       - run: poetry install
       - name: Run ruff static code analysis
-        run: poetry run ruff trigger_models
+        run: poetry run ruff check trigger_models
